@@ -1,0 +1,4 @@
+# Terraform artefacts
+.terraform.lock.hcl
+.terraform/
+terraform.tfstate
