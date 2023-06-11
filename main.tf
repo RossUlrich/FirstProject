@@ -1,7 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
-  access_key = "AKIARY5LIGX4QY76KR65"
-  secret_key = "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"
+  region     = "us-east-1"
 }
 
 resource "aws_vpc" "my_vpc" {
@@ -13,8 +11,8 @@ resource "aws_vpc" "my_vpc" {
 }
 
 resource "aws_subnet" "subnet-1" {
-  vpc_id     = aws_vpc.my_vpc.id
-  cidr_block = var.subnet_prefix[0]
+  vpc_id            = aws_vpc.my_vpc.id
+  cidr_block        = var.subnet_prefix[0]
   availability_zone = "us-east-1a"
 
   tags = {
@@ -24,8 +22,8 @@ resource "aws_subnet" "subnet-1" {
 
 
 resource "aws_subnet" "subnet-2" {
-  vpc_id     = aws_vpc.my_vpc.id
-  cidr_block = var.subnet_prefix[1]
+  vpc_id            = aws_vpc.my_vpc.id
+  cidr_block        = var.subnet_prefix[1]
   availability_zone = "us-east-1a"
 
   tags = {
@@ -34,8 +32,8 @@ resource "aws_subnet" "subnet-2" {
 }
 
 variable "subnet_prefix" {
-#   type        = string
-#   default     = ""
+  #   type        = string
+  #   default     = ""
   description = "cird block for subnet"
 }
 
@@ -109,9 +107,6 @@ resource "aws_route_table" "Route_T" {
 
 
 
-
-
-
 # resource "aws_instance" "my-first-server" {
 #   ami           = "ami-0715c1897453cabd1"
 #   instance_type = "t2.micro"
@@ -119,7 +114,7 @@ resource "aws_route_table" "Route_T" {
 #     # Name = "ubuntu"
 #   }
 
-  
+
 
 # resource "<provider>_<resource_type>" "name" {
 #    config options .....
